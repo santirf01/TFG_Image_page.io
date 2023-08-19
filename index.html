@@ -19,31 +19,61 @@
     </style>
 </head>
 <body>
+
+
+<body>
+    <h1>Albayzin</h1>
+    
+    <label for="selector">Selecciona una imagen de Albayzi:</label>
+    <select id="selector">
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Avg_tim_Albayzin.html">Tiempo medio por Nº palabras</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Median_time_Albayzin.html">Tiempo mediano por Nº palabras</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Std_time_Albayzin.html">Desviación típica del tiempo por Nº palabras</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/AudioSpeakAlb.html">Personas por número de frases</option>
+    </select>
+
+    <div id="contenido">
+        <!-- Aquí se cargará el contenido seleccionado -->
+    </div>
+
+    <script>
+        // Función para cargar el contenido según la selección
+        function loadContent() {
+            var selector = document.getElementById("selector");
+            var selectedValue = selector.options[selector.selectedIndex].value;
+            $("#contenido").load(selectedValue);
+        }
+
+        // Asignar el evento al cambio de selección
+        document.getElementById("selector").addEventListener("change", loadContent);
+    </script>
+</body>
+</html>
+<!--
     <h1>Página Principal</h1>
     <iframe src="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Avg_tim_Albayzin.html" width="840" height="640"></iframe>
     <div class="contenedor-imagen">
-        <!-- Cargar imagen1.html -->
+        <!-- Cargar imagen1.html 
         <div class="imagen">
             <object data="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Avg_tim_Albayzin.html"></object>
         </div>
 
-        <!-- Cargar imagen2.html -->
         <div class="imagen">
             <object data="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Avg_tim_Albayzin.html"></object>
         </div>
     </div>
 
     <div class="contenedor-imagen">
-        <!-- Cargar imagen3.html -->
+        
         <div class="imagen">
             <object data="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Avg_tim_Albayzin.html"></object>
         </div>
 
-        <!-- Cargar imagen4.html -->
+       
         <div class="imagen">
             <object data="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Avg_tim_Albayzin.html"></object>
         </div>
     </div>
 </body>
 </html>
-
+--!
