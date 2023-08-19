@@ -123,13 +123,17 @@
                     break;
                 default:
                     contenidoDiv.innerHTML = ""; // Limpiar el contenido si no se selecciona nada
-            }
-            function createSelect(selectId) {
+        }
+        function createSelect(selectId) {
+                if (selectId==="Imageselector_Lib"){
                 var selectHtml = '<select id="' + selectId + '" onchange="loadContent(this.value)">';
-                // Agregar opciones a partir de tu código original...
+                 selectHtml += '<option value="">Selecciona una imagen de Librivox</option>';
+                selectHtml += '<option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Librivox/Avg_tim_Librivox.html">Tiempo medio por Nº palabras</option>';
+                selectHtml += '<option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Librivox/Median_time_Librivox.html">Tiempo mediano por Nº palabras</option>';
+                selectHtml += '<option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Librivox/STD_time_Librivox.html">Desviación típica del tiempo por Nº palabras</option>';
                 selectHtml += '</select>';
                 return selectHtml;
-          }
+        }
        
     </script>
 </body>
