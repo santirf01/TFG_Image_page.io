@@ -34,9 +34,21 @@
     </div>
     
     <h1>Albayzin</h1>
-    
-    <select id="Imageselector_Alb" onchange="loadContent(this.value)">
-        <option value="">Selecciona una imagen de Albayzin 216</option>
+    <h2>Albayzin 4 speakers</h2>
+    <select id="Imageselector_Alb4" onchange="loadContent(this.value)">
+        <option value="">Selecciona una imagen de Albayzin 4 speakers</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin_4_Speakers/Avg_tim_Albayzin_4speaker.html">Tiempo medio por Nº palabras</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin_4_Speakers/Median_time_Albayzin_4speaker.html">Tiempo mediano por Nº palabras</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin_4_Speakers/STD_time_Albayzin_4speaker.html">Desviación típica del tiempo por Nº palabras</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin_4_Speakers/AudioSpeakAlb_4speaker.html">Tiempo de audio y Nº frases por persona</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/UMAP/UMAP_Albayzin4.html">UMAP</option>
+    </select>
+
+    <div id="contenido">
+    </div>
+    <h2>Albayzin 216 speakers</h2>
+    <select id="Imageselector_Alb216" onchange="loadContent(this.value)">
+        <option value="">Selecciona una imagen de Albayzin 216 speakers</option>
         <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Avg_tim_Albayzin.html">Tiempo medio por Nº palabras</option>
         <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Median_time_Albayzin.html">Tiempo mediano por Nº palabras</option>
         <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/STD_time_Albayzin.html">Desviación típica del tiempo por Nº palabras</option>
@@ -46,7 +58,7 @@
     <div id="contenido">
     </div>
     <h1>Thalento</h1>
-    
+    <h2>Thalento Lectura y Diálogo</h2>
     <select id="Imageselector_Thal" onchange="loadContent(this.value)">
         <option value="">Selecciona una imagen de Thalento Diálogo y Lectura</option>
         <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Thalento/Avg_tim_Thalento.html">Tiempo medio por Nº palabras</option>
@@ -57,7 +69,17 @@
 
     <div id="contenido">
     </div>
+    <h2>Thalento Lectura</h2>
+        <select id="Imageselector_Thal_lect" onchange="loadContent(this.value)">
+        <option value="">Selecciona una imagen de Thalento Lectura</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Thalento_lect/Avg_tim_Thalento_lect.html">Tiempo medio por Nº palabras</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Thalento/Median_time_Thalento_lect.html">Tiempo mediano por Nº palabras</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Thalento/STD_time_Thalento_lect.html">Desviación típica del tiempo por Nº palabras</option>
+        <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Thalento/AudioSpeakThal_lect.html">Tiempo de audio y Nº frases por persona</option>
+    </select>
 
+    <div id="contenido">
+    </div>
     <script>
         // Función para cargar el contenido según la selección
         function loadContent(url) {
