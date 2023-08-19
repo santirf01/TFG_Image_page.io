@@ -72,7 +72,9 @@
                 contenidoDiv.innerHTML = ""; // Limpiar el contenido si no se selecciona nada
             }
         }
-        
+ function updateSecondSelect(optionsHtml) {
+        selectContainer.innerHTML = optionsHtml;
+    }        
 function showCategory(category) {
     var contenidoDiv = document.getElementById("contenido");
     
@@ -83,40 +85,50 @@ function showCategory(category) {
         case "librivox":
             if (!secondSelectCreated) {
                 var selectHtml = createSelect("Imageselector_Lib");
-                selectContainer.innerHTML = selectHtml;
+                 updateSecondSelect(selectHtml);
                 secondSelectCreated = true;
+            }else {
+            updateSecondSelect("");
             }
             document.getElementById("Imageselector_Lib").selectedIndex = 0;
             break;
         case "albayzin4":
             if (!secondSelectCreated) {
                 var selectHtml = createSelect("Imageselector_Alb4");
-                selectContainer.innerHTML = selectHtml;
+                 updateSecondSelect(selectHtml);
                 secondSelectCreated = true;
+            }else {
+            updateSecondSelect("");
             }
             document.getElementById("Imageselector_Alb4").selectedIndex = 0;
             break;
         case "albayzin216":
             if (!secondSelectCreated) {
                 var selectHtml = createSelect("Imageselector_Alb216");
-                selectContainer.innerHTML = selectHtml;
+                 updateSecondSelect(selectHtml);
                 secondSelectCreated = true;
+            }else {
+            updateSecondSelect("");
             }
             document.getElementById("Imageselector_Alb216").selectedIndex = 0;
             break;
         case "thalento_lect_dial":
             if (!secondSelectCreated) {
                 var selectHtml = createSelect("Imageselector_Thal");
-                selectContainer.innerHTML = selectHtml;
+                 updateSecondSelect(selectHtml);
                 secondSelectCreated = true;
+            }else {
+            updateSecondSelect("");
             }
             document.getElementById("Imageselector_Thal").selectedIndex = 0;
             break;
         case "thalento_lect":
             if (!secondSelectCreated) {
                 var selectHtml = createSelect("Imageselector_Thal_Lect");
-                selectContainer.innerHTML = selectHtml;
+                 updateSecondSelect(selectHtml);
                 secondSelectCreated = true;
+            }else {
+            updateSecondSelect("");
             }
             document.getElementById("Imageselector_Thal_Lect").selectedIndex = 0;
             break;
