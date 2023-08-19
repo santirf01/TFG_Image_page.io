@@ -26,7 +26,6 @@
     
     <select id="Imageselector" onchange="loadContent(this.value)">
         <option value="">Selecciona una imagen de Albayzin</option>
-        <option value="">Return</option>
         <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Avg_tim_Albayzin.html">Tiempo medio por Nº palabras</option>
         <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Median_time_Albayzin.html">Tiempo mediano por Nº palabras</option>
         <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Std_time_Albayzin.html">Desviación típica del tiempo por Nº palabras</option>
@@ -39,14 +38,20 @@
 
     <script>
         // Función para cargar el contenido según la selección
-        function loadContent() {
-            var selector = document.getElementById("selector");
-            var selectedValue = selector.options[selector.selectedIndex].value;
-            $("#contenido").html('<iframe src="' + selectedValue + '" width="840" height="640"></iframe>');
+        function loadContent(url) {
+            fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                var contenidoDiv = document.getElementById("contenido");
+                contenidoDiv.innerHTML = data;
+                contenidoDiv.classList.add("contenido-cargado"); // Agregamos la clase al div de contenido
+         })
+            .catch(error => {
+                console.error("Error:", error);
+            });
         }
-
         // Asignar el evento al cambio de selección
-        document.getElementById("Imageselector").addEventListener("change", loadContent);
+        //document.getElementById("Imageselector").addEventListener("change", loadContent);
     </script>
 </body>
 </html>
