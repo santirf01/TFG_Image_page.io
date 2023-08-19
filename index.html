@@ -94,6 +94,8 @@
     <div id="contenido">
     </div>
     <script>
+        var selectContainer = document.getElementById("selectContainer");
+       var secondSelectCreated = false; // Variable para controlar si se ha creado el segundo select
         // Función para cargar el contenido según la selección
         function loadContent(url) {
             var contenidoDiv = document.getElementById("contenido");
@@ -123,6 +125,11 @@
                     break;
                 default:
                     contenidoDiv.innerHTML = ""; // Limpiar el contenido si no se selecciona nada
+        }
+        if (!secondSelectCreated) {
+            var selectHtml = createSelect("secondSelectId");
+            selectContainer.innerHTML = selectHtml;
+            secondSelectCreated = true;
         }
          }
         function createSelect(selectId) {
