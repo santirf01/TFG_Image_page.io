@@ -39,10 +39,11 @@
     <script>
         // Función para cargar el contenido según la selección
         function loadContent(url) {
+            var contenidoDiv = document.getElementById("contenido");
             if (url) {
-                $("#contenido").html('<iframe src="' + url + '" width="840" height="640"></iframe>');
+                contenidoDiv.innerHTML = '<iframe src="' + url + '" width="840" height="640"></iframe>';
             } else {
-                $("#contenido").empty(); // Limpiar el contenido si no se selecciona nada
+                contenidoDiv.innerHTML = ""; // Limpiar el contenido si no se selecciona nada
             }
         }
         // Asignar el evento al cambio de selección
