@@ -2,6 +2,35 @@
 <head>
     <title>Página Principal</title>
     <style>
+        .titulo-container {
+            background-image: url(https://santirf01.github.io/TFG_TTS_page.io/Imagenes/Fondo.jpeg);;
+            background-size: cover;
+            background-position: center;
+            /* Establecemos el tamaño del contenedor y la altura mínima para asegurar que la imagen de fondo cubra todo el título */
+            height: 180px;
+            /* Establecemos el color y estilo del texto del título */
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            /* Centramos el título verticalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      .logo1 {
+            position: absolute;
+            top: 115px; /* Distancia desde la parte superior */
+            right: 50px; /* Distancia desde la derecha */
+            width: 150px; /* Ancho del logotipo */
+            height: 60px; /* Altura del logotipo */
+        }
+      .logo2 {
+            position: absolute;
+            top: 100px; /* Distancia desde la parte superior */
+            left: 50px; /* Distancia desde la derecha */
+            width: 150px; /* Ancho del logotipo */
+            height: 80px; /* Altura del logotipo */
+        }
         .contenedor-imagen {
             display: flex;
             justify-content: space-around;
@@ -33,7 +62,18 @@
         }
     </style>
 </head>
-<body>
+    <body>
+    <!-- Colocamos el título dentro del contenedor con la imagen de fondo -->
+    <div class="titulo-container">
+        <h1>Estudio de la síntesis de voz mediante técnicas de aprendizaje profundo para la creación de voces sanas y patológicas</h1>
+    </div>
+    <img src="https://santirf01.github.io/TFG_TTS_page.io/Imagenes/Vivolab.png" alt="Imagen de Vivolab" class="logo1">
+    <img src="https://santirf01.github.io/TFG_TTS_page.io/Imagenes/Unizar.png" alt="Imagen de Unizar" class="logo2">
+  <center>
+  <p><strong> Autor</strong>: Santiago Rubio Felipo.      <strong> Directores</strong> : Eduardo Lleida Solano,  Dayana Ribas González. </p>
+  <span class="entry-meta"><time itemprop="datePublished" datetime="2023-08-28"><em>Agosto 28, 2023</em></time></span>
+   </center>
+
 
 <table>
     <tr>
