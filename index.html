@@ -22,6 +22,16 @@
 
 
 <body>
+    <select id="categoriaSelector" onchange="showCategory(this.value)">
+        <option value="">Selecciona una categoría</option>
+        <option value="librivox">Librivox</option>
+        <option value="albayzin2">Albayzin 4 Speakers</option>
+        <option value="albayzin216">Albayzin 216 Speakers</option>
+        <option value="thalento_lect_dial">Thalento Lectura y Diálogo</option>
+        <option value="thalent_lecto">Thalento Lectura</option>
+    </select>
+    <div id="contenido">
+    </div>
     <h1>Librivox</h1>
     <select id="Imageselector_Lib" onchange="loadContent(this.value)">
         <option value="">Selecciona una imagen de Librivox</option>
@@ -93,8 +103,34 @@
                 contenidoDiv.innerHTML = ""; // Limpiar el contenido si no se selecciona nada
             }
         }
-        // Asignar el evento al cambio de selección
-        //document.getElementById("Imageselector").addEventListener("change", loadContent);
+         function showCategory(category) {
+            var contenidoDiv = document.getElementById("contenido");
+            switch (category) {
+                case "librivox":
+                    contenidoDiv.innerHTML = createSelect("Imageselector_Lib");
+                    break;
+                case "albayzin4":
+                    contenidoDiv.innerHTML = createSelect("Imageselector_Alb4");
+                    break;
+                case "albayzin216":
+                    contenidoDiv.innerHTML = createSelect("Imageselector_Alb216");
+                    break;
+                case "thalento_lect_dial":
+                    contenidoDiv.innerHTML = createSelect("Imageselector_Thal");
+                    break;
+                case "thalento_lect":
+                    contenidoDiv.innerHTML = createSelect("Imageselector_Thal_Lect");
+                    break;
+                default:
+                    contenidoDiv.innerHTML = ""; // Limpiar el contenido si no se selecciona nada
+            }
+            function createSelect(selectId) {
+                var selectHtml = '<select id="' + selectId + '" onchange="loadContent(this.value)">';
+                // Agregar opciones a partir de tu código original...
+                selectHtml += '</select>';
+                return selectHtml;
+          }
+       
     </script>
 </body>
 </html>
