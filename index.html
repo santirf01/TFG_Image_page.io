@@ -71,33 +71,57 @@
                 contenidoDiv.innerHTML = ""; // Limpiar el contenido si no se selecciona nada
             }
         }
-         function showCategory(category) {
-            var contenidoDiv = document.getElementById("contenido");
-            switch (category) {
-                case "librivox":
-                    contenidoDiv.innerHTML = createSelect("Imageselector_Lib");
-                    break;
-                case "albayzin4":
-                    contenidoDiv.innerHTML = createSelect("Imageselector_Alb4");
-                    break;
-                case "albayzin216":
-                    contenidoDiv.innerHTML = createSelect("Imageselector_Alb216");
-                    break;
-                case "thalento_lect_dial":
-                    contenidoDiv.innerHTML = createSelect("Imageselector_Thal");
-                    break;
-                case "thalento_lect":
-                    contenidoDiv.innerHTML = createSelect("Imageselector_Thal_Lect");
-                    break;
-                default:
-                    contenidoDiv.innerHTML = ""; // Limpiar el contenido si no se selecciona nada
-        }
-        if (!secondSelectCreated) {
-            var selectHtml = createSelect("secondSelectId");
-            selectContainer.innerHTML = selectHtml;
-            secondSelectCreated = true;
-        }
-         }
+        
+function showCategory(category) {
+    var contenidoDiv = document.getElementById("contenido");
+    
+    // Limpia el contenido del primer select cada vez que se elige una nueva categoría
+    contenidoDiv.innerHTML = "";
+
+    switch (category) {
+        case "librivox":
+            if (!secondSelectCreated) {
+                var selectHtml = createSelect("Imageselector_Lib");
+                selectContainer.innerHTML = selectHtml;
+                secondSelectCreated = true;
+            }
+            break;
+        case "albayzin4":
+            if (!secondSelectCreated) {
+                var selectHtml = createSelect("Imageselector_Alb4");
+                selectContainer.innerHTML = selectHtml;
+                secondSelectCreated = true;
+            }
+            break;
+        case "albayzin216":
+            if (!secondSelectCreated) {
+                var selectHtml = createSelect("Imageselector_Alb216");
+                selectContainer.innerHTML = selectHtml;
+                secondSelectCreated = true;
+            }
+            break;
+        case "thalento_lect_dial":
+            if (!secondSelectCreated) {
+                var selectHtml = createSelect("Imageselector_Thal");
+                selectContainer.innerHTML = selectHtml;
+                secondSelectCreated = true;
+            }
+            break;
+        case "thalento_lect":
+            if (!secondSelectCreated) {
+                var selectHtml = createSelect("Imageselector_Thal_Lect");
+                selectContainer.innerHTML = selectHtml;
+                secondSelectCreated = true;
+            }
+            break;
+        default:
+            // Si no se selecciona ninguna categoría, limpiar el contenido del segundo select
+            selectContainer.innerHTML = "";
+            secondSelectCreated = false;
+            break;
+    }
+}
+
         function createSelect(selectId) {
             if (selectId==="Imageselector_Lib"){
                 var selectHtml = '<select id="' + selectId + '" onchange="loadContent(this.value)">';
