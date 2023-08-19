@@ -24,8 +24,9 @@
 <body>
     <h1>Albayzin</h1>
     
-    <label for="selector">Selecciona una imagen de Albayzi:</label>
-    <select id="selector">
+    <select id="Imageselector" onchange="loadContent(this.value)">
+        <option value="">Selecciona una imagen de Albayzin</option>
+        <option value="">Return</option>
         <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Avg_tim_Albayzin.html">Tiempo medio por Nº palabras</option>
         <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Median_time_Albayzin.html">Tiempo mediano por Nº palabras</option>
         <option value="https://santirf01.github.io/TFG_Image_page.io/Imagenes/Albayzin/Std_time_Albayzin.html">Desviación típica del tiempo por Nº palabras</option>
@@ -41,11 +42,11 @@
         function loadContent() {
             var selector = document.getElementById("selector");
             var selectedValue = selector.options[selector.selectedIndex].value;
-            $("#contenido").load(selectedValue);
+            $("#contenido").html('<iframe src="' + selectedValue + '" width="840" height="640"></iframe>');
         }
 
         // Asignar el evento al cambio de selección
-        document.getElementById("selector").addEventListener("change", loadContent);
+        document.getElementById("Imageselector").addEventListener("change", loadContent);
     </script>
 </body>
 </html>
