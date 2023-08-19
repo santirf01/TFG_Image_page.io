@@ -39,16 +39,11 @@
     <script>
         // Función para cargar el contenido según la selección
         function loadContent(url) {
-            fetch(url)
-            .then(response => response.text())
-            .then(data => {
-                var contenidoDiv = document.getElementById("contenido");
-                contenidoDiv.innerHTML = data;
-                contenidoDiv.classList.add("contenido-cargado"); // Agregamos la clase al div de contenido
-         })
-            .catch(error => {
-                console.error("Error:", error);
-            });
+            if (url) {
+                $("#contenido").html('<iframe src="' + url + '" width="840" height="640"></iframe>');
+            } else {
+                $("#contenido").empty(); // Limpiar el contenido si no se selecciona nada
+            }
         }
         // Asignar el evento al cambio de selección
         //document.getElementById("Imageselector").addEventListener("change", loadContent);
